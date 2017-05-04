@@ -1,7 +1,16 @@
+<<<<<<< HEAD
 #remove index.php from the request but maintain the query string. also #redirect all requests to index.php
 RewriteEngine on
 RewriteBase /
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+=======
+#remove index.php from the request but maintain the query string. also #redirect all requests to index.php
+RewriteEngine on
+RewriteBase /
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+>>>>>>> origin/master
 #this rule redirects everything to index.php which bootstraps the whole application
