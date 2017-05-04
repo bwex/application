@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% block title %}admin login{% endblock %}
+{% block content %}
+{% if loggedin == true %}
+    <script language="javascript">
+        alert('successfully logged');
+        window.location.href = "admin";
+        
+    </script>
+
+{% endif %}
+    <div id="page-wrapper">
+
+        <div class="container-fluid">
+
+            <!-- Page Heading -->
+            <div class="row">
+                <div class="col-lg-12">
+                    <h1 class="page-header text-center">
+                       Administrator Login
+                        <small></small>
+                    </h1>
+                </div>
+            </div>
+            <!-- /.row -->
+            <!--                /.row-->
+
+            <div class="row">
+                <div class="col-md-4 col-md-offset-4">
+
+                    <form action="" method="POST">
+
+                    <div class="form-group">
+                        <label for="username">Username</label>
+                        <input type="text" class="form-control" name="username">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="username">Password</label>
+                        <input type="password" class="form-control" name="password">
+                    </div>
+
+                    <div class="form-group">
+                        <input type="submit" name="submit" value="Submit" class="btn btn-primary">
+                    </div>
+
+                    </form>
+                  
+                </div>
+
+            </div>
+
+            <div class="row">
+                <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+                <script type="text/javascript">
+
+
+                </script>
+                <div id="barchart_material" style="width: 'auto'; height: 500px;"></div>
+            </div>
+            <!-- /.row -->
+
+        </div>
+        <!-- /.container-fluid -->
+
+    </div>
+    <!-- /#page-wrapper -->
+
+
+{% endblock %}

@@ -1,0 +1,90 @@
+{% extends "base.html" %}
+{% block title %}online users{% endblock %}
+{% block head %}
+{{ parent() }}
+
+<style>"{{ source('css/tablepagination.min.css') }}" rel="stylesheet"</style>
+<style>"{{ source('css/non-admin.css') }}" rel="stylesheet"</style>
+{% endblock %}
+{% block content %}
+    <div id="wrapper">
+
+        <!-- Navigation -->
+        {{ source('non-admin-header.html') }}
+        <div id="page-wrapper">
+
+            <div class="container-fluid">
+
+                <!-- Page Heading -->
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h1 class="page-header text-center">
+                          Online users
+                            
+                        </h1>
+                        
+                        
+                    </div>
+                </div>
+                <!-- /.row -->
+<!--                /.row-->
+                
+<div class="row">
+    
+    <div class="table-responsive col-md-6 col-md-offset-3">
+             
+        <table id='usertable' class='table table-striped table-bordered' cellspacing='0' width='100%'>
+        <thead>
+            <tr>
+                <th>User</th>
+                <th>Ip address</th>
+                <th>Up time</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for users in onlineUsers %}
+            <tr>
+                <td>{{ users.user }}</td>
+                <td>{{ users.ipaddress }}</td>
+                <td>{{ users.uptime }}</td>
+            </tr>  
+            {% endfor %}
+        </tbody></table>
+      
+    </div>
+    
+   
+  
+</div>
+          
+<div class="row">
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script type="text/javascript">
+ 
+
+</script>
+<div id="barchart_material" style="width: 'auto'; height: 500px;"></div>
+</div>
+                <!-- /.row -->
+
+            </div>
+            <!-- /.container-fluid -->
+
+        </div>
+        <!-- /#page-wrapper -->
+
+    </div>
+    <!-- /#wrapper -->
+
+
+ <script>$(document).ready(function() {
+    $('#usertable').DataTable();
+} )</script>
+
+{% endblock %}
+{% block javascript %}
+{{ parent() }}
+<script type="text/javascript" src="https://cdn.datatables.net/v/dt/dt-1.10.13/datatables.min.js"></script>
+
+{% endblock %}
+

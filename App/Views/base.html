@@ -1,0 +1,59 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    {% block head %}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <title>{% block title %}base title{% endblock %}</title>
+
+    <!-- Bootstrap Core CSS -->
+    {% block stylesheets %}
+        <style>"{{ source('css/bootstrap.min.css') }}" rel="stylesheet"</style>
+        <style>"{{ source('font-awesome/css/font-awesome.min.css') }}" rel="stylesheet"</style>
+    {% endblock %}
+
+    <!-- Custom CSS -->
+    
+
+     <!-- Custom Fonts -->
+    
+    
+   
+{% endblock %}
+</head>
+
+<body>
+    
+    <div id="wrapper">{% block content %}  {% endblock %}</div>
+    {% block footer %}
+    <!-- Footer -->
+    <footer>
+        <div class="row text-center">
+            <div class="col-lg-12">
+                <p>Copyright &copy; <a href="http://www.bwextechnology.com" target="_blank">Chibwe Kapambwe </a>2017</p>
+            </div>
+            <!-- /.col-lg-12 -->
+        </div>
+        <!-- /.row -->
+    </footer>
+    {% endblock %}
+</div>
+<!-- /.container -->
+{% block javascript %}
+<!-- jQuery -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src="https://use.fontawesome.com/aa44fb9d94.js"></script>
+
+<!-- Bootstrap Core JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+{% endblock %}
+</body>
+
+</html>
